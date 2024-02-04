@@ -68,6 +68,9 @@ font-family: Ubuntu;
 font-size: 35px;
 }
 
+.retro {
+    font-family: Pixelify Sans;
+}
 
 h1 span {
     color: #BD53ED;
@@ -99,6 +102,21 @@ h1 span.stop-blinking::before {
     }
 
 
+.loginbtnpop {
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom right, #5baf51, #74df67);
+  padding: 5px 15px;
+  border-radius: 10px;
+}
+
+.loginbtnpop:hover {
+  background: #fff;
+  color: #74df67;
+    border: 1px solid #74df67;
+}
+
+
 /*Trigger Button*/
 .login-trigger {
   font-weight: bold;
@@ -117,20 +135,45 @@ h4 {
 }
 .close {
   color: #fff;
-  transform: scale(1.2);
+  transform: scale(1.4);
 }
 .modal-content {
   font-weight: bold;
-  background: #74df67;
+  background: transparent;
+    border: none;
 }
+
 .form-control {
-  margin: 1em 0;
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #4c4f53;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid #919599;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+.form-control {
+  margin: 0.5em 0;
+}
+.form-control:focus {
+    border-color: #000000 !important;
+}
+
 .form-control:hover,
 .form-control:focus {
   box-shadow: none;
-  border-color: #fff;
+  border-color: #000000;
 }
+
+label {
+    margin-bottom: none;
+}
+
 .username,
 .password {
   border: none;
@@ -158,10 +201,27 @@ h4 {
   transition: all 0.5s;
   margin-top: 1em;
 }
-.login:hover {
+.login-trigger:hover {
   background: #fff;
-  color: #74df67;
+  color: linear-gradient(to bottom right, #5baf51, #74df67);
 }
+
+.card {
+    background: url(https://media.tenor.com/GVbLnw73qD8AAAAj/dancing-duck-karlo.gif);
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-color: floralwhite;
+    background-position: 30% 85%;
+}
+
+.card.hovered {
+    background: url(https://media.tenor.com/JbCR18dg7qkAAAAM/duck-pixel.gif);
+    background-size: 45px;
+    background-repeat: no-repeat;
+    background-color: floralwhite;
+    background-position: 29% 87%;
+}
+
 </style>
    </head>
    <!-- body -->
@@ -219,12 +279,29 @@ h4 {
     
     <div class="modal-content">
       <div class="modal-body">
-        <h4>Login</h4>
-        <form>
-          <input type="text" name="username" class="username form-control" placeholder="Username"/>
-          <input type="password" name="password" class="password form-control" placeholder="password"/>
-          <input class="btn login" type="submit" value="Login" />
-        </form>
+<div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5 retro">
+            <h1 class="card-title text-center mb-1 fw-bold fs-5"><strong>Login</strong></h1>
+            <form>
+              <div class="form-floating mb-3">
+                <label for="floatingInput">ID</label>
+                <input type="text" class="form-control" id="floatingInput" placeholder="Insert student ID">
+
+              </div>
+              <div class="form-floating mb-3">
+                <label for="floatingPassword">Token</label>
+                <input type="text" class="form-control" id="floatingPassword" placeholder="Insert Token">
+
+              </div>
+
+
+              <div class="d-grid">
+                <button class="loginbtnpop" type="submit">Login</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>  
@@ -299,7 +376,18 @@ typeEffect();
          return false;
          });
       </script>
+<script>
+var button = document.querySelector('.loginbtnpop');
+var card = document.querySelector('.card');
 
+button.addEventListener('mouseover', function() {
+  card.classList.add('hovered');
+});
+
+button.addEventListener('mouseout', function() {
+  card.classList.remove('hovered');
+});
+</script>
 
    </body>
 </html>
