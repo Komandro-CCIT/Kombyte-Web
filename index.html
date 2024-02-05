@@ -146,64 +146,7 @@
   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="js/custom.js"></script>
   <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-  <script>
-    const dynamicText = document.querySelector("h1 span");
-    const words = ["Briliiant", "Youthful", "Tech-savvy", "Enthusiastic"];
-
-    // Variables to track the position and deletion status of the word
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    const typeEffect = () => {
-      const currentWord = words[wordIndex];
-      const currentChar = currentWord.substring(0, charIndex);
-      dynamicText.textContent = currentChar;
-      dynamicText.classList.add("stop-blinking");
-
-      if (!isDeleting && charIndex < currentWord.length) {
-        // If condition is true, type the next character
-        charIndex++;
-        setTimeout(typeEffect, 200);
-      } else if (isDeleting && charIndex > 0) {
-        // If condition is true, remove the previous character
-        charIndex--;
-        setTimeout(typeEffect, 100);
-      } else {
-        // If word is deleted then switch to the next word
-        isDeleting = !isDeleting;
-        dynamicText.classList.remove("stop-blinking");
-        wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-        setTimeout(typeEffect, 1200);
-      }
-    }
-
-    typeEffect();
-  </script>
-
-
-  <script>
-    $('.content').hide();
-
-    $('.slider').click(function () {
-      $(this).next('.content').slideToggle();
-      this.toggle = !this.toggle;
-      $(this).children("span").text(this.toggle ? "-" : "+");
-      return false;
-    });
-  </script>
-  <script>
-    var button = document.querySelector('.loginbtnpop');
-    var card = document.querySelector('.card');
-
-    button.addEventListener('mouseover', function () {
-      card.classList.add('hovered');
-    });
-
-    button.addEventListener('mouseout', function () {
-      card.classList.remove('hovered');
-    });
-  </script>
+  <script src="js/page/index.js"></script>
 
 </body>
 
