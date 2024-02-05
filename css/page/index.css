@@ -1,0 +1,202 @@
+    html {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    html::-webkit-scrollbar {
+      display: none;
+    }
+
+    .text-bg {
+      max-width: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-left: 30px;
+      float: none;
+    }
+
+    .text-bg img {
+      max-width: 100px;
+    }
+
+    .text-bg p {
+      color: #1f1716;
+      font-size: 17px;
+      line-height: 28px;
+      font-family: Ubuntu;
+      padding: 0 0 40px 0;
+    }
+
+    .text-bg h1,
+    .text-bg span {
+      font-family: Pixelify Sans;
+      font-size: 35px;
+    }
+
+    .retro {
+      font-family: Pixelify Sans;
+    }
+
+    h1 span {
+      color: #BD53ED;
+      position: relative;
+    }
+
+    h1 span::before {
+      content: "";
+      height: 30px;
+      width: 2px;
+      position: absolute;
+      top: 50%;
+      right: -8px;
+      background: #74df67;
+      transform: translateY(-45%);
+      animation: blink 0.7s infinite;
+    }
+
+    h1 span.stop-blinking::before {
+      animation: none;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0
+      }
+    }
+
+    .blur {
+      filter: blur(5px);
+    }
+
+    #mySection {
+      z-index: 999;
+    }
+
+
+    .loginbtnpop {
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(to bottom right, #5baf51, #74df67);
+      padding: 5px 15px;
+      border-radius: 10px;
+    }
+
+    .loginbtnpop:hover {
+      background: #fff;
+      color: #74df67;
+      border: 1px solid #74df67;
+    }
+
+
+    /*Trigger Button*/
+    .login-trigger {
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(to bottom right, #5baf51, #74df67);
+      padding: 15px 30px;
+      border-radius: 30px;
+      position: relative;
+      top: 50%;
+    }
+
+    /*Modal*/
+    h4 {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .close {
+      color: #fff;
+      transform: scale(1.4);
+    }
+
+    .modal-content {
+      font-weight: bold;
+      background: transparent;
+      border: none;
+    }
+
+    .form-control {
+      display: block;
+      width: 100%;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #4c4f53;
+      background-color: transparent;
+      background-clip: padding-box;
+      border: 1px solid #919599;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .form-control {
+      margin: 0.5em 0;
+    }
+
+    .form-control:focus {
+      border-color: #000000 !important;
+    }
+
+    .form-control:hover,
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #000000;
+    }
+
+    label {
+      margin-bottom: none;
+    }
+
+    .username,
+    .password {
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      border-bottom: 2px solid #eee;
+      padding-left: 0;
+      font-weight: normal;
+      background: transparent;
+    }
+
+    .form-control::-webkit-input-placeholder {
+      color: #eee;
+    }
+
+    .form-control:focus::-webkit-input-placeholder {
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .login {
+      padding: 6px 20px;
+      border-radius: 20px;
+      background: none;
+      border: 2px solid white;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.5s;
+      margin-top: 1em;
+    }
+
+    .login-trigger:hover {
+      background: #fff;
+      color: linear-gradient(to bottom right, #5baf51, #74df67);
+    }
+
+    .card {
+      background: url(https://media.tenor.com/GVbLnw73qD8AAAAj/dancing-duck-karlo.gif);
+      background-size: 35px;
+      background-repeat: no-repeat;
+      background-color: floralwhite;
+      background-position: 30% 85%;
+    }
+
+    .card.hovered {
+      background: url(https://media.tenor.com/JbCR18dg7qkAAAAM/duck-pixel.gif);
+      background-size: 45px;
+      background-repeat: no-repeat;
+      background-color: floralwhite;
+      background-position: 29% 87%;
+    }
