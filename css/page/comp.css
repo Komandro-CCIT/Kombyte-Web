@@ -3,12 +3,15 @@ html, body {
 }
 
 body {
-margin: 0;
+    margin: 0;
     /* background-image: linear-gradient( 102.7deg, rgb(190 247 197) 8.2%, rgb(156 247 159) 19.6%, rgb(164 229 155) 36.8%, rgb(178 252 173) 73.2%, rgb(190 247 197) 90.9% ); */
     color: #D7D7EF;
-    backdrop-filter: contrast(0.5);
-    background-image: url(https://img.freepik.com/premium-vector/programming-developers-vector-seamless-pattern-internet-coding_341076-444.jpg);
+    background: white;
     font-family: Pixelify Sans;
+    /* backdrop-filter: invert(81%) sepia(39%) saturate(4344%) hue-rotate(79deg) brightness(97%) contrast(92%); */
+    background-size: 400px;
+    backdrop-filter: contrast(0.5);
+    background-image: url(../../images/compbg.png);
 }
 
 .dash{
@@ -41,7 +44,8 @@ margin: 0;
 
 .fake-btn {
   flex-shrink: 0;
-  background-color: #9699b3;
+background-color: #55a12e;
+    color: #ffffff;
   border-radius: 3px;
   padding: 8px 15px;
   margin-right: 10px;
@@ -50,7 +54,7 @@ margin: 0;
 }
 
 .file-msg {
-  color: #9699b3;
+color: #6fab51;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.4;
@@ -151,15 +155,15 @@ margin: 0;
   font-size: 0.8rem;
   display: flex;
   justify-content: space-between;
-  border-right: 1px solid rgb(203, 203, 203);
-  border-left: 1px solid rgb(203, 203, 203);
-  border-bottom: 1px solid rgb(203, 203, 203);
-  border-top: 1px solid rgb(203, 203, 203);
+border-right: 1px solid #6fab51;
+    border-left: 1px solid #6fab51;
+    border-bottom: 1px solid #6fab51;
+    border-top: 1px solid #6fab51;
 }
 
 .card__right {
   width: 30%;
-  border-right: 1px solid rgb(203, 203, 203);
+border-right: 1px solid #6fab51;
 }
 
 .card__left {
@@ -181,12 +185,12 @@ margin: 0;
 }
 
 .item:nth-child(even) {
-  background: rgb(234, 235, 234);
+    background: #d4f3c4;
 }
 
 .item p {
   margin: 0;
-color: black;
+color: #436f2d;
 
 }
 
@@ -196,7 +200,7 @@ color: black;
 
 .timer {
 font-family: Pixelify Sans;
-color: black;
+    color: #6fab51;
     position: relative;
     display: flex;
     align-items: center;
