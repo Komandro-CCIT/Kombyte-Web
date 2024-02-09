@@ -1,3 +1,15 @@
+<?php
+session_start();
+include 'core/db.php'; // Include your database connection
+getConnection();
+
+// Check if the user is already logged in
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+  echo '<script>window.location.href="pages/comp.php";</script>';
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,24 +107,23 @@
           <div class="card border-0 shadow rounded-3 my-5">
             <div class="card-body p-4 p-sm-5 retro">
               <h1 class="card-title text-center mb-1 fw-bold fs-5"><strong>Login</strong></h1>
-              <form>
-                <div class="form-floating mb-3">
-                  <label for="floatingInput">ID</label>
-                  <input type="text" class="form-control" id="floatingInput" placeholder="Insert student ID">
 
+              <form action="controller/controller.php" method="POST">
+                <div class="form-floating mb-3">
+                  <label for="floatingInput">Team Name</label>
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Insert Your Team Name"
+                    name="teamName">
                 </div>
                 <div class="form-floating mb-3">
                   <label for="floatingPassword">Token</label>
-                  <input type="text" class="form-control" id="floatingPassword" placeholder="Insert Token">
-
+                  <input type="text" class="form-control" id="floatingPassword" placeholder="Insert Your Token"
+                    name="token">
                 </div>
-
-
                 <div class="d-grid">
-                  <button class="loginbtnpop" type="submit">Login</button>
+                  <button class="loginbtnpop" type="submit" name="login">Login</button>
                 </div>
-
               </form>
+
             </div>
           </div>
         </div>
