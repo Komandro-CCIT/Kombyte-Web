@@ -47,17 +47,18 @@ class models
         $fileTmpName = $_FILES['file']['tmp_name'];
         $fileSize = $_FILES['file']['size'];
         $fileType = $_FILES['file']['type'];
+        $status = $_POST['status'];
         $teamId = $_SESSION['teamId'];
 
         // Read file data
         $fileData = file_get_contents($fileTmpName);
 
         // Prepare SQL query to insert file into database
-        $sql = "INSERT INTO tb_submit (team_id, filename, filetype, filesize, filedata) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO tb_submit (team_id, status, filename, filetype, filesize, filedata) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
 
         // Execute query
-        if ($stmt->execute([$teamId, $fileName, $fileType, $fileSize, $fileData])) {
+        if ($stmt->execute([$teamId, $status, $fileName, $fileType, $fileSize, $fileData])) {
             echo "File uploaded successfully.";
         } else {
             echo "Error uploading file: " . $this->conn->error;

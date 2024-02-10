@@ -2,6 +2,11 @@ const $fileInput = $('.file-input');
 const $droparea = $('.file-drop-area');
 const $delete = $('.item-delete');
 
+function deleteTimerkombyte() {
+  localStorage.removeItem("timerkombyte");
+  console.log("timerkombyte deleted from localStorage.");
+}
+
 $fileInput.on('dragenter focus click', function () {
   $droparea.addClass('is-active');
 });
@@ -63,4 +68,5 @@ document.addEventListener("DOMContentLoaded", function() {
     timerContainer.classList.remove("hide");
   });
 });
+
 
