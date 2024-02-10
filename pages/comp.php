@@ -40,12 +40,12 @@ $class = $_SESSION['class'];
             <p>Minute :</p>
           </font>
           <input id="minutes" type="text" style="width: 8%; border: none; font-size: 20px;
-                      font-weight: bold; color: black;">
+                      font-weight: bold; color: black;" readonly>
           <font size="5">
             <p>Second :</p>
           </font>
           <input id="seconds" type="text" style="width: 8%; border: none; font-size: 20px;
-                      font-weight: bold; color: black;">
+                      font-weight: bold; color: black;" readonly>
         </div>
       </div>
     </div>
@@ -101,10 +101,10 @@ $class = $_SESSION['class'];
           <span class="file-msg">or drop files here</span>
           <input class="file-input" type="file" name="file" multiple>
           <div class="item-delete"></div>
-          <input id="status-input" type="text" name="status" value="">
+          <input id="status-input" type="text" name="status" value="On Time">
         </div>
         <div class="submit trans">
-          <button class="button-start" type="submit" name="submit" id="submit-button"> :: SUBMIT ::
+          <button class="button-start" type="submit" name="submit" id="submit-button" onclick="deleteTimerkombyte()"> :: SUBMIT ::
             <div class="star-1">
               <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
                 style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
