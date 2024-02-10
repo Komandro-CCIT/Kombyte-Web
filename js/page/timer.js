@@ -7,6 +7,8 @@ function Decrement() {
   if (document.getElementById) {
     minutes = document.getElementById("minutes");
     seconds = document.getElementById("seconds");
+    statusInput = document.getElementById("status-input");
+    statusInput.style.display = "none";
     if (seconds < 59) {
       seconds.value = secs;
     } else {
@@ -19,12 +21,16 @@ function Decrement() {
     }
     if (mins < 0) {
       alert("time up");
-      document.getElementById("submit-button").click();
       minutes.value = 0;
       seconds.value = 0;
     } else {
       secs--;
       setTimeout("Decrement()", 1000);
+    }
+    if (secs > 0 || mins > 0) {
+      statusInput.value = "On Time";
+    } else {
+      statusInput.value = "Late";
     }
   }
 }
