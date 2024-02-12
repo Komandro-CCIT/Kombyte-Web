@@ -10,7 +10,7 @@ body {
     font-family: Pixelify Sans;
     /* backdrop-filter: invert(81%) sepia(39%) saturate(4344%) hue-rotate(79deg) brightness(97%) contrast(92%); */
     background-size: 400px;
-    backdrop-filter: contrast(0.5);
+    backdrop-filter: contrast(0.6);
     background-image: url(../../images/compbg.png);
 }
 
