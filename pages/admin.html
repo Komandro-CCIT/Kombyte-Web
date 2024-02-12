@@ -1,117 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>test table</title>
+<title>KomByte : Admin</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" /></script>
 <script src="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" /> </script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-<style>
-body {
-  background-color: #ffffff;
-  background-image: radial-gradient(rgba(12, 12, 12, 0.171) 2px, transparent 0);
-  background-size: 30px 30px;
-  background-position: -5px -5px;
-}
-
-
-.table-fixed tbody {
-    height: 450px;
-    overflow-y: auto;
-    width: 100%;
-}
-
-.table-fixed thead,
-.table-fixed tbody,
-.table-fixed tr,
-.table-fixed td,
-.table-fixed th {
-    display: block;
-}
-
-.table-fixed tbody td,
-.table-fixed tbody th,
-.table-fixed thead > tr > th {
-    float: left;
-    position: relative;
-
-    &::after {
-        content: '';
-        clear: both;
-        display: block;
-    }
-}
-
-
-
-        .hidden {
-            display: none;
-        }
-
-.inputer {
- border: none;
-width: 200px;
- padding: 1rem;
- border-radius: 1rem;
- background: #fdfcfc;
- box-shadow: 10px 10px 40px #c5c5c5,
-		-10px -10px 40px #ffffff;
- transition: 0.3s;
-}
-
-.inputer:focus {
- outline-color: #e8e8e8;
- background: #fdfcfc;
- box-shadow: inset 20px 20px 60px #c5c5c5,
-		inset -20px -20px 60px #ffffff;
- transition: 0.3s;
-}
-
-#myInput{
-width: 400px;
-}
-
-.Late{
-color: red;
-}
-
-.group{
-padding: 1.5rem 0.7rem !important;
-}
-
-.tt td{
-border-left:1px solid #dee2e6 !important;
-border-bottom:1px solid #dee2e6 !important;
-}
-
-.tt th{
-
-border-bottom:1px solid #dee2e6 !important;
-}
-
-.name1{
-    display: flex;
-    height: 74px;
-    flex-direction: column;
-padding: 0px !important;
-}
-
-.name2{
-    padding: 5px;
-}
-
-.name3{
-    padding: 5px;
-
-    border-top: 1px solid #c7ccd1;
-}
-</style>
+<link rel="stylesheet" href="../css/page/admin.css" />
 </head>
 
 <body>
 
-
-<!-- For demo purpose -->
 <div class="container text-center text-white">
     <div class="row pt-3">
 
@@ -226,56 +125,7 @@ padding: 0px !important;
             </div>
         </div>
     </div>
-  <script>
-    function myFunction() {
-      var input = document.getElementById("myInput").value.toUpperCase();
-      var columnIndex = parseInt(document.getElementById("columnSelect").value);
-      var table = document.getElementById("myTable");
-      var rows = table.getElementsByTagName("tr");
-
-      for (var i = 0; i < rows.length; i++) {
-        var cells = rows[i].getElementsByTagName("td");
-        var headers = rows[i].getElementsByTagName("th");
-        var found = false;
-
-        if (columnIndex === 0) {
-          for (var j = 0; j < cells.length; j++) {
-            var cellText = cells[j].textContent || cells[j].innerText;
-            if (cellText.toUpperCase().indexOf(input) > -1) {
-              found = true;
-              break;
-            }
-          }
-          for (var j = 0; j < headers.length; j++) {
-            var headerText = headers[j].textContent || headers[j].innerText;
-            if (headerText.toUpperCase().indexOf(input) > -1) {
-              found = true;
-              break;
-            }
-          }
-        } else if (columnIndex === 4) {
-          for (var j = 0; j < headers.length; j++) {
-            var headerText = headers[j].textContent || headers[j].innerText;
-            if (headerText.toUpperCase().indexOf(input) > -1) {
-              found = true;
-              break;
-            }
-          }
-        } else {
-          var cell = cells[columnIndex - 1];
-          var header = headers[columnIndex];
-          if (cell) {
-            var cellText = cell.textContent || cell.innerText;
-            if (cellText.toUpperCase().indexOf(input) > -1) {
-              found = true;
-            }
-          }
-        }
-
-        rows[i].style.display = found ? "" : "none";
-      }
-    }
-  </script>
+  <script src="../js/page/admin.js"></script>
 
 </body>
 </html>
