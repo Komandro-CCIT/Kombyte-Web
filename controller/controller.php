@@ -12,4 +12,8 @@ if (isset($_POST['submit'])) {
     $model->submit();
 }
 
+if (isset($_GET['submitId'])) {
+    $submitId = $_GET['submitId'];
+    $model->downloadFile($submitId);
+}
 
