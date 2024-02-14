@@ -1,32 +1,3 @@
-<?php
-
-session_start();
-include '../core/db.php';
-$conn = getConnection();
-
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    echo '<script>window.location.href="../index.php";</script>';
-    exit;
-}
-if ($_SESSION['logged_in'] == true && $_SESSION['logged_as'] == "user") {
-    echo '<script>window.location.href="comp.php";</script>';
-}
-
-$role = $_SESSION['juryRole'];
-$i = 1;
-
-if ($role == "Excel") {
-    $excelQuery = "SELECT * FROM submission_details where role = 'Excel'";
-    $results = $conn->query($excelQuery);
-    $datas = $results->fetchAll();
-} else {
-    $dbQuery = "SELECT * FROM submission_details where role = 'Database'";
-    $results = $conn->query($dbQuery);
-    $datas = $results->fetchAll();
-}
-
-?>
-
 <!DOCTYPE html>
 <html>
 
