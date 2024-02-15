@@ -17,3 +17,12 @@ if (isset($_GET['submitId'])) {
     $model->downloadFile($submitId);
 }
 
+if (isset($_GET['upper'])) {
+    $teamId = $_GET['upper'];
+    $model->uppering($teamId);
+}
+
+if (isset($_GET['logout'])) {
+    $model->logout();
+}
+

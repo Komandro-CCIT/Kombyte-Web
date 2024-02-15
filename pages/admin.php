@@ -25,6 +25,14 @@ if ($role == "Excel") {
     $datas = $results->fetchAll();
 }
 
+foreach ($datas as $data) {
+    $teamId = $data['team_id'];
+    $teamQuery = "SELECT round FROM tb_teams where team_id = ?";
+    $QR = $conn->prepare($teamQuery);
+    $QR->execute([$teamId]);
+    $round = $QR->fetchColumn();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -35,21 +43,21 @@ if ($role == "Excel") {
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <script src="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../css/page/admin.css" />
-  <style>
-    .exit-button {
-font-size: 25px;
-      position: fixed;
-      top: 15px;
-      left: 20px;
-      z-index: 9999;
-      cursor: pointer;
-    }
-  </style>
+    <link rel="stylesheet" href="../css/page/adminn.css" />
+    <style>
+        .exit-button {
+            font-size: 25px;
+            position: fixed;
+            top: 15px;
+            left: 20px;
+            z-index: 9999;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -95,12 +103,15 @@ font-size: 25px;
                         <tbody id="myTable">
                             <?php foreach ($datas as $data) { ?>
 
-                                <tr class="tt <?= $data['status'] ?>">
+                                <tr class="tt <?= $data['status'] ?> <?= $round ?>">
                                     <th scope="row" class="col-1 group">
                                         <?= $i++ ?>
                                     </th>
                                     <td class="col-2 group">
-                                        <?= $data['team_name'] ?><span style="margin-left: 10%"><i class="fas fa-arrow-circle-up" style="color: black; font-size: 18px;"></i></span>
+                                        <?= $data['team_name'] ?><span style="margin-left: 10%"><a
+                                                href="../controller/controller.php?upper=<?= $data['team_id'] ?>"
+                                                class="fas fa-arrow-circle-up"
+                                                style="color: black; font-size: 18px;"></a></span>
                                     </td>
                                     <td class="col-3 name1">
                                         <div class="name2">
@@ -129,9 +140,10 @@ font-size: 25px;
             </div>
         </div>
     </div>
-  <div class="exit-button">
-    <i class="fas fa-sign-out-alt"><span  style="font-family: monospace;">Logout<span></i>
-  </div>
+    <div class="exit-button">
+        <a class="fas fa-sign-out-alt" href="../controller/controller.php?logout"><span
+                style="font-family: monospace;">Logout<span></a>
+    </div>
     <script src="../js/page/admin.js"></script>
 </body>
 

@@ -68,6 +68,10 @@ width: 500px;
 color: red;
 }
 
+.qr2 {
+    color: green;
+}
+
 .group{
 padding: 1.5rem 0.7rem !important;
 }

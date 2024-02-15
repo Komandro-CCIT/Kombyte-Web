@@ -115,4 +115,20 @@ class models
         }
     }
 
+    public function uppering($teamId)
+    {
+        $stmt = $this->conn->prepare("UPDATE tb_teams SET round = ? WHERE team_id = ?");
+        $stmt->execute(["qr2", $teamId]);
+
+        echo '<script>alert("Updating successful!")</script>;';
+        echo '<script>window.location.href="../pages/admin.php";</script>';
+    }
+
+    public function logout()
+    {
+        session_destroy();
+        echo '<script>window.location.href="../";</script>';
+        exit;
+    }
+
 }

@@ -81,7 +81,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
                   <img src="images/LogoKom.png"></img>
                 </div>
                 <h1>Komandro <span></span></h1>
-                <p>KomByte atau Komandro Briliiant Youthful Tech-savvy Enthusiastic adalah perlombaan yang diadakan
+                <p>KomByte atau Komandro Brilliant Youthful Tech-savvy Enthusiastic adalah perlombaan yang diadakan
                   dengan
                   kerjasama CCIT-FTUI dengan Komandro dengan tujuan untuk menguji dan meningkatkan skill para mahasiswa
                   CCIT-FTUI dalam bidang keahlian masing-masing</p>
