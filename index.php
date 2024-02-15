@@ -81,7 +81,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
                   <img src="images/LogoKom.png"></img>
                 </div>
                 <h1>Komandro <span></span></h1>
-                <p>KomByte atau Komandro Briliiant Youthful Tech-savvy Enthusiastic adalah perlombaan yang adakan dengan
+                <p>KomByte atau Komandro Brilliant Youthful Tech-savvy Enthusiastic adalah perlombaan yang diadakan
+                  dengan
                   kerjasama CCIT-FTUI dengan Komandro dengan tujuan untuk menguji dan meningkatkan skill para mahasiswa
                   CCIT-FTUI dalam bidang keahlian masing-masing</p>
                 <a class="login-trigger" href="#" data-target="#login" data-toggle="modal">Login</a>
@@ -138,7 +139,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         <div class="row">
           <div class="col-md-12">
             <p>© 2024 <a href="https://github.com/Komandro-CCIT">Komandro CCIT</a></p>
-<p style="font-size: 15px;"><a href="https://github.com/Ifarra">Muhammad Fauzan Arrafi</a> & <a href="https://github.com/sir-anthesis">Raditya Ihza Wibowo</a></p>
+            <p style="font-size: 15px;"><a href="https://github.com/Ifarra">Muhammad Fauzan Arrafi</a> & <a
+                href="https://github.com/sir-anthesis">Raditya Ihza Wibowo</a></p>
           </div>
         </div>
       </div>

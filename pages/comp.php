@@ -7,23 +7,42 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
   echo '<script>window.location.href="../index.php";</script>';
   exit;
 }
+if ($_SESSION['logged_in'] == true && $_SESSION['logged_as'] == "jury") {
+  echo '<script>window.location.href="admin.php";</script>';
+}
+
 
 $teamName = $_SESSION['teamName'];
 $member1 = $_SESSION['member1'];
 $member2 = $_SESSION['member2'];
 $class = $_SESSION['class'];
+$round = $_SESSION['round'];
+$role = $_SESSION['role'];
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>KomByte : Start!</title>
+  <title>KomByte :
+    <?= $role ?>
+  </title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link href="https://fonts.googleapis.com/css?family=Pixelify+Sans:400,700&display=swap" rel="stylesheet">
   <link href="../css/page/comp.css" rel="stylesheet">
   <script src="../js/page/timer.js"></script>
+
+  <?php
+  if ($round == "qr1") { ?>
+    <script src="../js/page/timerQr1.js"></script>
+    <?php
+  } else { ?>
+    <script src="../js/page/timerQr2.js"></script>
+    <?php
+  }
+  ?>
 </head>
 
 <body>
@@ -104,7 +123,8 @@ $class = $_SESSION['class'];
           <input id="status-input" type="text" name="status" value="On Time">
         </div>
         <div class="submit trans">
-          <button class="button-start" type="submit" name="submit" id="submit-button" onclick="deleteTimerkombyte()"> :: SUBMIT ::
+          <button class="button-start" type="submit" name="submit" id="submit-button" onclick="deleteTimerkombyte()"> ::
+            SUBMIT ::
             <div class="star-1">
               <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
                 style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
