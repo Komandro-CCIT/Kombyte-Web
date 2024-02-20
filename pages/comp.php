@@ -28,6 +28,8 @@ $role = $_SESSION['role'];
   <title>KomByte :
     <?= $role ?>
   </title>
+  <!-- fevicon -->
+  <link rel="icon" href="../images/LogoKom.png" type="image/gif" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link href="https://fonts.googleapis.com/css?family=Pixelify+Sans:400,700&display=swap" rel="stylesheet">
