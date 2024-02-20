@@ -40,6 +40,8 @@ foreach ($datas as $data) {
 
 <head>
     <title>KomByte : Admin</title>
+    <!-- fevicon -->
+    <link rel="icon" href="../images/LogoKom.png" type="image/gif" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -108,7 +110,8 @@ foreach ($datas as $data) {
                                         <?= $i++ ?>
                                     </th>
                                     <td class="col-2 group">
-                                        <?= $data['team_name'] ?><span style="margin-left: 10%"><a
+                                        <?= $data['team_name'] ?> (
+                                        <?= $round ?> ) <span style="margin-left: 10%"><a
                                                 href="../controller/controller.php?upper=<?= $data['team_id'] ?>"
                                                 class="fas fa-arrow-circle-up"
                                                 style="color: black; font-size: 18px;"></a></span>
