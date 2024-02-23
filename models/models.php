@@ -29,7 +29,8 @@ class models
                 $_SESSION['teamName'] = $user['team_name'];
                 $_SESSION['member1'] = $user['member1'];
                 $_SESSION['member2'] = $user['member2'];
-                $_SESSION['class'] = $user['class'];
+                $_SESSION['class1'] = $user['class1'];
+                $_SESSION['class2'] = $user['class2'];
                 $_SESSION['role'] = $user['role'];
                 $_SESSION['round'] = $user['round'];
                 header("Location: ../pages/comp.php");

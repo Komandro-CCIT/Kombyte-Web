@@ -1,13 +1,27 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>KomByte : Start!</title>
+  <title>KomByte :
+    <?= $role ?>
+  </title>
+  <!-- fevicon -->
+  <link rel="icon" href="../images/LogoKom.png" type="image/gif" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width" />
   <link href="https://fonts.googleapis.com/css?family=Pixelify+Sans:400,700&display=swap" rel="stylesheet">
   <link href="../css/page/comp.css" rel="stylesheet">
   <script src="../js/page/timer.js"></script>
+
+  <?php
+  if ($round == "qr1") { ?>
+    <script src="../js/page/timerQr1.js"></script>
+    <?php
+  } else { ?>
+    <script src="../js/page/timerQr2.js"></script>
+    <?php
+  }
+  ?>
 </head>
 
 <body>
@@ -23,12 +37,12 @@
           <font size="5">
             <p>Minute :</p>
           </font>
-          <input id="minutes" type="text" style="width: 8%; border: none; font-size: 20px;
+          <input id="minutes" type="text" style="width: 10%; border: none; font-size: 20px;
                       font-weight: bold; color: black;" readonly>
           <font size="5">
             <p>Second :</p>
           </font>
-          <input id="seconds" type="text" style="width: 8%; border: none; font-size: 20px;
+          <input id="seconds" type="text" style="width: 10%; border: none; font-size: 20px;
                       font-weight: bold; color: black;" readonly>
         </div>
       </div>
@@ -69,7 +83,7 @@
             </div>
             <div class="item">
               <p>
-                <?= $class ?>
+                <?= $class1 ?><span>&nbsp;/&nbsp;</span><?= $class2 ?>
               </p>
             </div>
           </div>
@@ -88,7 +102,8 @@
           <input id="status-input" type="text" name="status" value="On Time">
         </div>
         <div class="submit trans">
-          <button class="button-start" type="submit" name="submit" id="submit-button" onclick="deleteTimerkombyte()"> :: SUBMIT ::
+          <button class="button-start" type="submit" name="submit" id="submit-button" onclick="deleteTimerkombyte()"> ::
+            SUBMIT ::
             <div class="star-1">
               <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1"
                 style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
