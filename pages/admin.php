@@ -124,8 +124,13 @@ foreach ($datas as $data) {
                                             <?= $data['member2'] ?>
                                         </div>
                                     </td>
-                                    <td class="col-2 group">
-                                        <?= $data['class'] ?>
+                                    <td class="col-2 name1">
+                                        <div class="name2">
+                                            <?= $data['class1'] ?>
+                                        </div>
+                                        <div class="name3">
+                                            <?= $data['class2'] ?>
+                                        </div>
                                     </td>
                                     <td class="col-2 group">
                                         <?= $data['timestamp'] ?><br />

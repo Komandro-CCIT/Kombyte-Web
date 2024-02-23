@@ -15,7 +15,8 @@ if ($_SESSION['logged_in'] == true && $_SESSION['logged_as'] == "jury") {
 $teamName = $_SESSION['teamName'];
 $member1 = $_SESSION['member1'];
 $member2 = $_SESSION['member2'];
-$class = $_SESSION['class'];
+$class1 = $_SESSION['class1'];
+$class2 = $_SESSION['class2'];
 $round = $_SESSION['round'];
 $role = $_SESSION['role'];
 
@@ -106,7 +107,8 @@ $role = $_SESSION['role'];
             </div>
             <div class="item">
               <p>
-                <?= $class ?>
+                <?= $class1 ?><span>&nbsp;/&nbsp;</span>
+                <?= $class2 ?>
               </p>
             </div>
           </div>
