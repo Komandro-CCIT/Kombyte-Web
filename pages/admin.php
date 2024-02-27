@@ -66,7 +66,9 @@ foreach ($datas as $data) {
     <div class="container text-center text-white">
         <div class="row pt-3">
             <div class="col-lg-8 mx-auto">
-                <h1 style="color: black">
+                <h1 style="position: relative;
+    color: black;
+    z-index: 99;">
                     <?= $role ?> Competition
                 </h1>
                 <input class="inputer" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search.."
