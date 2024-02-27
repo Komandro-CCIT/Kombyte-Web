@@ -21,7 +21,7 @@ function decrementTimer() {
     localStorage.setItem("timerkombyte", permin);
   } else {
     permin = parseFloat(guh); // parse guh as a float number
-    permin -= 0.5; // decrement by 0.5
+    permin -= 0.1; // decrement by 0.5
   }
 
   if (permin <= 0) {
@@ -30,6 +30,6 @@ function decrementTimer() {
   } else {
     localStorage.setItem("timerkombyte", permin);
     console.log("Timer value:", permin);
-    setTimeout(decrementTimer, 30000); // call the function again after 30 seconds
+    setTimeout(decrementTimer, 6000); // call the function again after 30 seconds
   }
 }

@@ -140,7 +140,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
           <div class="col-md-12">
             <p>© 2024 <a href="https://github.com/Komandro-CCIT">Komandro CCIT</a></p>
             <p style="font-size: 15px;"><a href="https://github.com/Ifarra">Muhammad Fauzan Arrafi</a> & <a
-                href="https://github.com/sir-anthesis">Raditya Ihza Wibowo</a></p>
+                href="https://github.com/sir-anthesis">Radithya Ihza Wibowo</a></p>
           </div>
         </div>
       </div>
