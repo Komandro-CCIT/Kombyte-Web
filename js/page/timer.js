@@ -35,5 +35,5 @@ function getminutes() {
 }
 
 function getseconds() {
-  return secs - Math.round(mins * 60);
+  return parseInt(secs - Math.round(mins * 60));
 }
