@@ -25,14 +25,6 @@ if ($role == "Excel") {
     $datas = $results->fetchAll();
 }
 
-foreach ($datas as $data) {
-    $teamId = $data['team_id'];
-    $teamQuery = "SELECT round FROM tb_teams where team_id = ?";
-    $QR = $conn->prepare($teamQuery);
-    $QR->execute([$teamId]);
-    $round = $QR->fetchColumn();
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -106,6 +98,16 @@ foreach ($datas as $data) {
                         </thead>
                         <tbody id="myTable">
                             <?php foreach ($datas as $data) { ?>
+
+                                <?php
+                                foreach ($data as $dat) {
+                                    $teamId = $data['team_id'];
+                                    $teamQuery = "SELECT round FROM tb_teams where team_id = ?";
+                                    $QR = $conn->prepare($teamQuery);
+                                    $QR->execute([$teamId]);
+                                    $round = $QR->fetchColumn();
+                                }
+                                ?>
 
                                 <tr class="tt <?= $data['status'] ?> <?= $round ?>">
                                     <th scope="row" class="col-1 group">
